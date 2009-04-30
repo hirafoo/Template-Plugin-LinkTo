@@ -1,5 +1,8 @@
 Revision history for Perl extension Template::Plugin::LinkTo
 
+0.05  May  1 01:48:22 JST 2009 
+    - fix pod
+
 0.04  Thu Apr 30 21:54:36 JST 2009
 	- use base instead of parent at LinkTo.pm
       and add html encode (idea by http://blog.livedoor.jp/dankogai/archives/50940023.html)
