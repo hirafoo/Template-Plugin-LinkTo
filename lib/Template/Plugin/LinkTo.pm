@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base 'Template::Plugin';
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 my @HTML_OPTIONS = qw/href target confirm/;
 
 my %escaped = ( '&' => 'amp', '<' => 'lt', '>' => 'gt', '"' => 'quot' );
