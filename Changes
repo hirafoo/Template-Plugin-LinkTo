@@ -1,5 +1,10 @@
 Revision history for Perl extension Template::Plugin::LinkTo
 
+0.06  Fri May  1 12:29:18 JST 2009
+    - fix encode
+      and use URI::Escape
+      and fix Makefile.PL to dependence solution
+
 0.05  May  1 01:48:22 JST 2009 
     - fix pod
 

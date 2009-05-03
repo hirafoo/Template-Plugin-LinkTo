@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base 'Template::Plugin';
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 my @HTML_OPTIONS = qw/href target confirm/;
 
 my %escaped = ( '&' => 'amp', '<' => 'lt', '>' => 'gt', '"' => 'quot' );
@@ -19,9 +19,13 @@ sub link_to {
     $text = escape $text;
     my $result = $text;
 
-    if (my $href = $opt->{href}) {
-        my $target  = $opt->{target} ? qq{target="$opt->{target}"} : '';
-        my $confirm = $opt->{confirm} ? qq{onclick="return confirm('$opt->{confirm}');"} : ''; #"
+    if (my $href = escape $opt->{href}) {
+        my $target  = ($opt->{target} = escape $opt->{target}) 
+                      ? qq{target="$opt->{target}"} 
+                      : '';
+        my $confirm = ($opt->{confirm} = escape $opt->{confirm})
+                      ? qq{onclick="return confirm('$opt->{confirm}');"}
+                      : ''; #"
 
         for my $key (@HTML_OPTIONS) {
             delete $opt->{$key};
@@ -32,8 +36,9 @@ sub link_to {
             $params .= qq{&$key=$opt->{$key}};
         }
         if ($params) {
+            $params = escape $params;
             $href .= $params;
-            $href  =~ s{&}{?}
+            $href  =~ s{&amp;}{?}
                 if $href !~ m{\?};
         }
 
