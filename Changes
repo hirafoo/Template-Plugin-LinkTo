@@ -1,14 +1,18 @@
 Revision history for Perl extension Template::Plugin::LinkTo
 
-0.06  Fri May  1 12:29:18 JST 2009
+0.07  Thu May 7 2009
+    - add 'inc' directory for Module::Install
+      and README
+
+0.06  Fri May 1 2009
     - fix encode
       and use URI::Escape
       and fix Makefile.PL to dependence solution
 
-0.05  May  1 01:48:22 JST 2009 
+0.05  May 1 2009 
     - fix pod
 
-0.04  Thu Apr 30 21:54:36 JST 2009
+0.04  Thu Apr 30 2009
 	- use base instead of parent at LinkTo.pm
       and add html encode (idea by http://blog.livedoor.jp/dankogai/archives/50940023.html)
 

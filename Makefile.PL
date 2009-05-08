@@ -6,6 +6,7 @@ all_from 'lib/Template/Plugin/LinkTo.pm';
 
 requires 'Template';
 requires 'Template::Plugin';
+requires 'Template::Test';
 requires 'URI::Escape';
 auto_install;
 
