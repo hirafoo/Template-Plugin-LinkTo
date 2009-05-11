@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use base 'Template::Plugin';
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 my @HTML_OPTIONS = qw/href target confirm/;
 
 my %escaped = ( '&' => 'amp', '<' => 'lt', '>' => 'gt', '"' => 'quot' );
@@ -32,7 +32,7 @@ sub link_to {
         }
         
         my $params;
-        for my $key (keys %$opt) {
+        for my $key (sort keys %$opt) {
             $params .= qq{&$key=$opt->{$key}};
         }
         if ($params) {

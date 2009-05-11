@@ -53,7 +53,7 @@ __END__
 } -%]
 [% LinkTo.link_to('link_text', args) %]
 --expect--
-<a href="/link/to?foo=bar&amp;in=put&amp;hoge=huga">link_text</a>
+<a href="/link/to?foo=bar&amp;hoge=huga&amp;in=put">link_text</a>
 
 --test--
 [% USE LinkTo -%]
