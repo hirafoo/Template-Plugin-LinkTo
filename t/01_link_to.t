@@ -18,6 +18,16 @@ __END__
 [% USE LinkTo -%]
 [% args = {
     href => '/link/to',
+    img => '/images/hoge.jpg',
+} -%]
+[% LinkTo.link_to('link_text', args) %]
+--expect--
+<a href="/link/to"><img src="/images/hoge.jpg" /></a>
+
+--test--
+[% USE LinkTo -%]
+[% args = {
+    href => '/link/to',
     hoge => 'huga',
 } -%]
 [% LinkTo.link_to('link_text', args) %]

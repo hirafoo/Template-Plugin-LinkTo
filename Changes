@@ -1,5 +1,8 @@
 Revision history for Perl extension Template::Plugin::LinkTo
 
+0.09  Sun Aug 30 15:50:08 JST 2009
+    - coped 'img' tag
+
 0.08  Mon May 11 21:36:58 JST 2009
     - fix html option sort
       thanks to fujiwara's comment at http://d.hatena.ne.jp/foosin/20090509#c1242012013
