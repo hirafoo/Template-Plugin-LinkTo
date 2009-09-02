@@ -3,8 +3,8 @@ use strict;
 use warnings;
 use base 'Template::Plugin';
 
-our $VERSION = '0.091';
-my @HTML_OPTIONS = qw/href target confirm title img/;
+our $VERSION = '0.092';
+my @HTML_OPTIONS = qw/href target confirm title img class/;
 
 my %escaped = ( '&' => 'amp', '<' => 'lt', '>' => 'gt', '"' => 'quot' );
 sub escape {
@@ -29,6 +29,9 @@ sub link_to {
         my $title   = ($opt->{title} = escape $opt->{title})
                       ? qq/title="$opt->{title}"/
                       : '';
+        my $class   = ($opt->{class} = escape $opt->{class})
+                      ? qq/class="$opt->{class}"/
+                      : '';
 
         for my $key (@HTML_OPTIONS) {
             delete $opt->{$key};
@@ -45,7 +48,7 @@ sub link_to {
                 if $href !~ m/\?/;
         }
 
-        $result = qq{<a href="$href" $target $confirm $title>$text</a>};
+        $result = qq{<a href="$href" $target $confirm $title $class>$text</a>};
         $result =~ s/\s{2,}/ /g;
         $result =~ s/\s>/>/;
     }

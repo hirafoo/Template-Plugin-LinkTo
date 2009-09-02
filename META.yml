@@ -25,4 +25,4 @@ requires:
   URI::Escape: 0
 resources:
   repository: http://github.com/hirafoo/Template-Plugin-LinkTo/tree/master
-version: 0.091
+version: 0.092

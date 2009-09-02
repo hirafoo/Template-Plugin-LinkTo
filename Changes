@@ -1,5 +1,8 @@
 Revision history for Perl extension Template::Plugin::LinkTo
 
+0.092 Wed Sep  2 23:08:57 JST 2009
+    - coped 'class' tag
+
 0.091 Sun Aug 30 23:56:45 JST 2009
     - coped 'title' tag
 
